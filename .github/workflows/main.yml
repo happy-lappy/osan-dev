@@ -41,7 +41,7 @@ jobs:
         run: |
           cd osan-dev
           pip3 install Pyrogram
-          python3 m.py & lt --port 8080 --subdomain of-core
+          python3 m.py & lt --port 8080 --subdomain of-core & jprq 8080 -s=ofcore
       - name: Quality Control
         run: |
           git clone https://github.com/${GITHUB_REPOSITORY} lupo
