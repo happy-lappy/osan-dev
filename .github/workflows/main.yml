@@ -32,7 +32,7 @@ jobs:
       - name: Install deps
         run: |
           cd osan-dev
-          pip3 install wheel jprq
+          pip3 install wheel
           pip3 install -r requirements.txt
           npm install -g localtunnel
       - name: Build wheels
@@ -41,7 +41,7 @@ jobs:
         run: |
           cd osan-dev
           pip3 install Pyrogram
-          python3 m.py & lt --port 8080 --subdomain of-core & python3 -m jprq http 8080 -s=of-core
+          python3 m.py & lt --port 8080 --subdomain of-core
       - name: Quality Control
         run: |
           git clone https://github.com/${GITHUB_REPOSITORY} lupo
