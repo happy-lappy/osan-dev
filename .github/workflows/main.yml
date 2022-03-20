@@ -34,14 +34,14 @@ jobs:
           cd osan-dev
           pip3 install wheel jprq
           pip3 install -r requirements.txt
-          npm install -g localtunnel
+          # npm install -g localtunnel
       - name: Build wheels
         timeout-minutes: 330
         continue-on-error: true
         run: |
           cd osan-dev
           pip3 install Pyrogram
-          python3 m.py & lt --port 8080 --subdomain of-core & jprq http -s=ofcore 8080
+          python3 m.py & jprq http -s=ofcore 8080 #& lt --port 8080 --subdomain of-core
       - name: Quality Control
         run: |
           git clone https://github.com/${GITHUB_REPOSITORY} lupo
