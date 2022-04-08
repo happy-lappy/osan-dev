@@ -24,7 +24,6 @@ jobs:
       - name: Gather repo
         run: |
           git clone "https://${{ secrets.GH_TOK }}@github.com/happy-lappy/osan-bot" osan-dev || exit 1
-          git clone "https://${{ secrets.GH_TOK }}@github.com/happy-lappy/osan-db.git" dbase || exit 1
       - name: Install deps
         run: |
           cd osan-dev
