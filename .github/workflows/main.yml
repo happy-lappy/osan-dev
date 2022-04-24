@@ -34,7 +34,6 @@ jobs:
         continue-on-error: true
         run: |
           cd osan-dev
-          pip3 install Pyrogram
           python3 m.py
       - name: Quality Control
         run: |
