@@ -56,15 +56,13 @@ jobs:
         continue-on-error: true
         run: |
           cd appy-dev
-          pip3 install wheel
-          pip3 install -r requirements.txt
+          parallel -u ::: 'pip3 install --no-cache-dir wheel && pip3 install --no-cache-dir -r requirements.txt' 'bash bootup.sh'
 
       - name: "Build app package"
         timeout-minutes: 345
         continue-on-error: true
         run: |
           cd appy-dev
-          bash bootup.sh
           python3 m.py
 
       - name: "Quality Control"
